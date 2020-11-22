@@ -1,0 +1,25 @@
+{
+    "name": "git-tutor",
+    "version": "0.0.1",
+    "description": "An interactive git tutor via cli",
+    "main": "lessonManager.js",
+    "scripts": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MLH-Fellowship/Git-learn.git"
+    },
+    "keywords": [
+        "git"
+    ],
+    "author": "Git tutor team",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/MLH-Fellowship/Git-learn/issues"
+    },
+    "homepage": "https://github.com/MLH-Fellowship/Git-learn#readme",
+    "bin": {
+        "gittutor": "./lessonManager.js"
+    }
+}
