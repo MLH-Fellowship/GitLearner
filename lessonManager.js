@@ -32,7 +32,14 @@ const mainLoop = () => {
     rl.question("Please enter the lesson number: ", decide);
 }                                
 
+const onLessonFinish = () => {
+    console.log("Congratulations on finishing the lesson!");
+    writeDelimiter();
+    mainLoop();
+};
+
 const decide = (lessonNumString) => {
+    console.log("came to decision: " + lessonNumString);
     let lessonNum = Number.parseInt(lessonNumString);
     if (Number.isNaN(lessonNum)) {
         console.log("Please provide a valid number!");
@@ -40,12 +47,8 @@ const decide = (lessonNumString) => {
         console.log("This lesson does not exist yet :)");
         writeDelimiter();
     } else {
-        lessons[lessonNum - 1].startLesson(rl);
-        console.log("Congratulations on finishing the lesson!");
-        writeDelimiter();
+        lessons[lessonNum - 1].startLesson(rl, onLessonFinish);
     }
-
-    mainLoop();
 }
 
 // create tutoring file to create the git repo in, and do other things
@@ -59,7 +62,3 @@ clear();
 
 
 mainLoop();
-
-module.exports = {
-    mainLoop
-};
