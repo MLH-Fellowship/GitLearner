@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 
+const { clear } = require("console");
 const readline = require("readline");
 const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout
+    output: process.stdout,
+    terminal: false,
 });
+const file = require("./helpers/file");
 
 const fillEmail = require("./fillEmail");
+const gitInit = require('./gitInit')
 
-const lessons = [fillEmail];
+const lessons = [fillEmail, gitInit];
 
 const writeDelimiter = () => {
     console.log();
@@ -36,13 +40,23 @@ const decide = (lessonNumString) => {
         console.log("This lesson does not exist yet :)");
         writeDelimiter();
     } else {
-        lessons[lessonNum - 1].startLesson();
+        lessons[lessonNum - 1].startLesson(rl);
         console.log("Congratulations on finishing the lesson!");
         writeDelimiter();
     }
 
     mainLoop();
 }
+
+// create tutoring file to create the git repo in, and do other things
+if (!file.directoryExists("./git-tutor"))
+{
+    // create the actual directory
+    file.createTutorDirectory();
+}
+// clear console
+clear();
+
 
 mainLoop();
 
