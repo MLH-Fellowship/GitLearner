@@ -9,11 +9,10 @@ const rl = readline.createInterface({
 });
 const file = require("./helpers/file");
 
-const fillEmail = require("./fillEmail");
-const gitInit = require('./gitInit')
+// lesson array
+const lessons = [require("./fillEmail"), require('./gitInit'), require("./gitLog")];
 
-const lessons = [fillEmail, gitInit];
-
+// add space to console
 const writeDelimiter = () => {
     console.log();
     console.log('--------------------');
@@ -33,6 +32,7 @@ const mainLoop = () => {
 }                                
 
 const onLessonFinish = () => {
+    clear();
     console.log("Congratulations on finishing the lesson!");
     writeDelimiter();
     mainLoop();
