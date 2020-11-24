@@ -8,6 +8,7 @@ const rl = readline.createInterface({
     terminal: false,
 });
 const file = require("./helpers/file");
+var figlet = require('figlet');
 
 // lesson array
 const lessons = [require("./fillEmail"), require('./gitInit'), require("./gitLog")];
@@ -20,6 +21,7 @@ const writeDelimiter = () => {
 }
 
 const mainLoop = () => {
+    console.log(figlet.textSync("Git-Learn", {horizontalLayout: 'full'}));
     console.log("Choose which topic you'd like to cover!")
     console.log("We recommend going step by step.")
 
