@@ -1,5 +1,7 @@
 # 🎄 GitLearner
 
+![main](https://github.com/MLH-Fellowship/Git-learn/blob/master/main.jpg)
+
 A CLI app to make you learn Git in a playful way! 
 Stop making resolutions, start making them true!
 
