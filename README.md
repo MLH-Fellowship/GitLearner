@@ -13,6 +13,9 @@ Santa Claus teams has a lot to take care about to make Christmas awesome.
 His teams started using Git to make work easier for everyone.
 Santa needs your help in order to be set on time.
 
+## ⛄ Find out more
+Find more on https://git-learner.netlify.app/
+
 ## 🎅 Get it
 
 Clone this repository by running the following command inside your terminal:
